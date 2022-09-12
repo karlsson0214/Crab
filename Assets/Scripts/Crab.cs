@@ -47,4 +47,12 @@ public class Crab : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.StartsWith("Worm"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
